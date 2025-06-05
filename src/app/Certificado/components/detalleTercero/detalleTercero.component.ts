@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-detalle-tercero',
+  selector: 'detalle-tercero',
   imports: [],
   templateUrl: './detalleTercero.component.html',
   styleUrl: './detalleTercero.component.css',
