@@ -1,21 +1,48 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { consultarProc, terecero } from '../types';
+import { catchError, map, Observable, of} from 'rxjs';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CertificadoService {
-
-  private http = inject(HttpClient)
-
+  private http = inject(HttpClient);
+  private urlTercero = environment.tercero_url;
+  private identificacion?:string
   constructor() { }
 
-  prueba(){
-    const res=this.http.get("http://127.0.0.1:8000/")
+  consultaTercero(documento:string):Observable<terecero|null>{
+    const url = `${this.urlTercero}${documento}`;
+    return this.http.get<terecero>(url).pipe(
+      map(response=>{
+          this.identificacion=documento
+          return response
+        }
+      ),
+      catchError(error => {
+        const detalle = this.getErrorMessage(error);
+        if (detalle && detalle.includes('No hay usuario con cedula')) {
+          return of(null);
+        }
 
-    return res.subscribe(respt=>{
-      console.log('Response status:',respt);
-    })
+        throw new Error(detalle || 'Error en la consulta');
+      })
+    );
+  }
+
+  consultarProcedimiento(info:consultarProc){
+
+  }
+  
+
+
+  private getErrorMessage(error: any):string {
+    if (error?.error?.detail && typeof error.error.detail === 'string') {
+      return error.error.detail;
+    }
+    return 'Error desconocido'
   }
 
 }
