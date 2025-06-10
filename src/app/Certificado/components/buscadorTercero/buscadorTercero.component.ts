@@ -12,17 +12,23 @@ import { terecero } from '../../../types';
 })
 export class BuscadorTerceroComponent {
   private service=inject(CertificadoService)
-  usuario?:terecero
+  usuario?:terecero | boolean
   documento:string='';
   nombrecompleto:string=''
   consultar(){
     if (this.documento != ''){
       this.nombrecompleto=''
       const res=this.service.consultaTercero(this.documento);
-      res.subscribe(respuesta=>{
-        console.log(respuesta)
-        this.usuario=respuesta
-        this.nombrecompleto=`${this.usuario?.BeneficiarioPrimerNombre} ${this.usuario?.BeneficiarioSegundoNombre} ${this.usuario?.BeneficiarioPrimerApellido} ${this.usuario?.BeneficiarioSegundoApellido}`
+      res.subscribe({ 
+        next:(res)=>{
+          if(res===null){
+            this.usuario=true
+            this.nombrecompleto=`no se encontro usuario con cedula ${this.documento}`
+          }else{
+            this.usuario=res
+            this.nombrecompleto=`${this.usuario?.BeneficiarioPrimerNombre} ${this.usuario?.BeneficiarioSegundoNombre} ${this.usuario?.BeneficiarioPrimerApellido} ${this.usuario?.BeneficiarioSegundoApellido}`
+          }
+        }
       })
     }
   }
