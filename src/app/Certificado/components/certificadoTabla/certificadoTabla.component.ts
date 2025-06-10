@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { resPro } from '../../../types';
 
 @Component({
   selector: 'certificado-tabla',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './certificadoTabla.component.css',
 })
 export class CertificadoTablaComponent { 
+  cir=input<resPro[]>([])
+
+  
 }
