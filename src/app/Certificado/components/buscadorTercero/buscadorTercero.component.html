@@ -1,4 +1,6 @@
 <h2>Tercero:</h2>
-<input type="text" placeholder="Ingrese el documento del usuario">
-<button>Buscar</button>
-<detalle-tercero></detalle-tercero>
+<input type="text" placeholder="Ingrese el documento del usuario" id='documento' [(ngModel)]="documento">
+<button (click)="consultar()">Buscar</button>
+@if(usuario){
+    <detalle-tercero [usuario]="nombrecompleto"/>
+}
