@@ -6,3 +6,10 @@ export interface terecero {
   "BeneficiarioPrimerApellido": string,
   "BeneficiarioSegundoApellido": string
 }
+
+export interface consultarProc {
+  "fecha":string,
+  "usuario":string,
+  "indasoespecial":string
+}
+

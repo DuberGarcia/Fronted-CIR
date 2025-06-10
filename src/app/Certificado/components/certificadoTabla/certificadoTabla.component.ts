@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './certificadoTabla.component.html',
   styleUrl: './certificadoTabla.component.css',
 })
-export class CertificadoTablaComponent { }
+export class CertificadoTablaComponent { 
+}

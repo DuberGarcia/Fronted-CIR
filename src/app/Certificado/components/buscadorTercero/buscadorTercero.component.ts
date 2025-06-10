@@ -15,6 +15,7 @@ export class BuscadorTerceroComponent {
   usuario?:terecero | boolean
   documento:string='';
   nombrecompleto:string=''
+
   consultar(){
     if (this.documento != ''){
       this.nombrecompleto=''
@@ -32,4 +33,5 @@ export class BuscadorTerceroComponent {
       })
     }
   }
+  
 }
