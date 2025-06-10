@@ -11,5 +11,19 @@
         <th>Intereses pagados</th>
         <th>Seccion</th>
     </tr>
+    @for(row of cir(); track $index){
+        <tr>
+            <td>{{row.CertIngRetDes}}</td>
+            <td>{{row.CertIngRetDes}}</td>
+            <td>{{row.CertIngRetCta}}</td>
+            <td>{{row.CertIngRetSal}}</td>
+            <td>{{row.CertIngRetBasGra}} </td>
+            <td>{{row.CertIngRetBasNoGra}}</td>
+            <td>{{row.CertIngRetValDev}}</td>
+            <td>{{row.CertIngRetValRet}}</td>
+            <td>{{row.CertIngRetIntPag}}</td>
+            <td>{{row.CertIngRetSec}}</td>
+        </tr>  
+    }
 </table>
 
