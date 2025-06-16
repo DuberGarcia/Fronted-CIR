@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { DetalleTerceroComponent } from '../detalleTercero/detalleTercero.component';
-import { CertificadoService } from '../../Certificado.service';
+import { CertificadoService } from '../../../services/Certificado.service';
 import { FormsModule } from '@angular/forms';
 import { terecero } from '../../../types';
 

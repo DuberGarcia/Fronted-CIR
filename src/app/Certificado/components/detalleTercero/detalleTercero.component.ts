@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { CertificadoService } from '../../Certificado.service';
+import { CertificadoService } from '../../../services/Certificado.service';
 import { terecero } from '../../../types';
 
 @Component({

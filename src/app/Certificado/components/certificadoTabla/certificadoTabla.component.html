@@ -1,15 +1,15 @@
-<table>
+<table class="table-auto border-separate">
     <tr>
-        <th>Concepto</th>
-        <th>Descripción</th>
-        <th>Cuenta</th>
-        <th>Saldo</th>
-        <th>Base gravable</th>
-        <th>Base no gravable</th>
-        <th>Valor devengado</th>
-        <th>Valor retenido</th>
-        <th>Intereses pagados</th>
-        <th>Seccion</th>
+        <th class="px-2 bg-emerald-800 text-white">Concepto</th>
+        <th class="px-2 bg-emerald-800 text-white">Descripción</th>
+        <th class="px-2 bg-emerald-800 text-white">Cuenta</th>
+        <th class="px-2 bg-emerald-800 text-white">Saldo</th>
+        <th class="px-2 bg-emerald-800 text-white">Base gravable</th>
+        <th class="px-2 bg-emerald-800 text-white">Base no gravable</th>
+        <th class="px-2 bg-emerald-800 text-white">Valor devengado</th>
+        <th class="px-2 bg-emerald-800 text-white">Valor retenido</th>
+        <th class="px-2 bg-emerald-800 text-white">Intereses pagados</th>
+        <th class="px-2 bg-emerald-800 text-white">Seccion</th>
     </tr>
     @for(row of cir(); track $index){
         <tr>
@@ -25,5 +25,18 @@
             <td>{{row.CertIngRetSec}}</td>
         </tr>  
     }
+<!-- 
+        <tr>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+            <td>hola esto es una comuna</td>
+        </tr>   -->
 </table>
 

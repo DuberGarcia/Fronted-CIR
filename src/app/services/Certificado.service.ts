@@ -44,7 +44,6 @@ export class CertificadoService {
     return this.http.post<resPro[]>(url,info).pipe(
       map(res=>res),
       catchError(error=> {
-        console.log(error)
         throw new Error(error)
       })
     )
@@ -61,7 +60,6 @@ export class CertificadoService {
         }
       ),
       catchError(error=>{
-        console.log(JSON.stringify(error))
         throw new Error(error)
       })
     )

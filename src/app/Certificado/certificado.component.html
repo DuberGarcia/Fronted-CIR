@@ -1,20 +1,28 @@
-<h1>Certificado de Ingresos y Retenciones</h1>
-<div>
-    <p>Vigencia :</p>
-    <select [(ngModel)]="vigencia">
-        @for (anio of anios; track $index) {
-            <option>{{anio}}</option>
-        }
-    </select>
+<div class="p-2 h-screen bg-neutral-100">
+    <h1 class="flex w-full justify-center text-4xl font-bold text-green-900">Certificado de Ingresos y Retenciones</h1>
+    <div class="flex ">
+        <p class="my-1 text-lg">Vigencia :</p>
+        <select [(ngModel)]="vigencia">
+            @for (anio of anios; track $index) {
+                <option>{{anio}}</option>
+            }
+        </select>
+    </div>
+    
+    <buscador-tercero class="mb-1"></buscador-tercero>
+    
+    <!-- <input type="checkbox">
+    <label>Generar certificado y retencion</label> 
+    <br>-->
+    @if(isLoading()){
+        <div class="fixed inset-0 flex items-center justify-center bg-black/30 z-50">
+            <div class="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+        </div>   
+    }
+
+    <input class="mr-1 accent-green-700" type="checkbox" [(ngModel)]="myCheckboxValue">
+    <label>¿incluir informacion de Asociados Especiales?</label>
+    <certificado-tabla class="my-1.5" [cir]="cir()"></certificado-tabla>
+    <button class="shadow-md/30 mx-2 px-2 text-white bg-lime-600 hover:bg-lime-200 hover:text-gray-900 rounded-xl" (click)="consultar()">Procesar</button>
+    <button class="shadow-md/30 mx-2 px-2 text-white bg-lime-600 hover:bg-lime-200 hover:text-gray-900 rounded-xl" (click)="pdf()">Imprimir</button>
 </div>
-
-<buscador-tercero></buscador-tercero>
-
-<!-- <input type="checkbox">
-<label>Generar certificado y retencion</label> 
-<br>-->
-<input type="checkbox" [(ngModel)]="myCheckboxValue">
-<label>¿incluir informacion de Asociados Especiales?</label>
-<certificado-tabla [cir]="cir()"></certificado-tabla>
-<button (click)="consultar()">Procesar</button>
-<button (click)="pdf()">Imprimir</button>

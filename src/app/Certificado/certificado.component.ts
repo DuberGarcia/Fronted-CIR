@@ -1,9 +1,10 @@
-import { Component, inject, signal} from '@angular/core';
+import { Component, computed, inject, signal} from '@angular/core';
 import { BuscadorTerceroComponent } from './components/buscadorTercero/buscadorTercero.component';
 import { CertificadoTablaComponent } from './components/certificadoTabla/certificadoTabla.component';
 import { FormsModule } from '@angular/forms';
 import { consultarProc, resPro } from '../types';
-import { CertificadoService } from './Certificado.service';
+import { CertificadoService } from '../services/Certificado.service';
+import { LoadingService } from '../services/loading.service';
 
 
 @Component({
@@ -14,6 +15,9 @@ import { CertificadoService } from './Certificado.service';
 })
 
 export class CertificadoComponent { 
+  loadservice=inject(LoadingService)
+  isLoading = computed(() => this.loadservice.loading());
+
   private service=inject(CertificadoService)
   anioInicial=1990;
   anioActual=new Date().getFullYear();
