@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
 import { resPro } from '../../../types';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'certificado-tabla',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './certificadoTabla.component.html',
   styleUrl: './certificadoTabla.component.css',
 })

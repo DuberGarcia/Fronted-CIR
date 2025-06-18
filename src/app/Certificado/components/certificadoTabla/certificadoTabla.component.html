@@ -1,6 +1,6 @@
-<table class="table-auto border-separate">
+<table class="table-auto border-separate border-spacing-0.5 shadow-md/30 rounded-xl bg-gray-800">
     <tr>
-        <th class="px-2 bg-emerald-800 text-white">Concepto</th>
+        <th class="px-2 bg-emerald-800 text-white" [ngClass]="cir().length>0?'rounded-tl-xl':'rounded-l-xl'">Concepto</th>
         <th class="px-2 bg-emerald-800 text-white">Descripción</th>
         <th class="px-2 bg-emerald-800 text-white">Cuenta</th>
         <th class="px-2 bg-emerald-800 text-white">Saldo</th>
@@ -9,34 +9,21 @@
         <th class="px-2 bg-emerald-800 text-white">Valor devengado</th>
         <th class="px-2 bg-emerald-800 text-white">Valor retenido</th>
         <th class="px-2 bg-emerald-800 text-white">Intereses pagados</th>
-        <th class="px-2 bg-emerald-800 text-white">Seccion</th>
+        <th class="px-2 bg-emerald-800 text-white" [ngClass]="cir().length>0?'rounded-tr-xl':'rounded-r-xl'">Seccion</th>
     </tr>
     @for(row of cir(); track $index){
-        <tr>
-            <td>{{row.CertIngRetDes}}</td>
-            <td>{{row.CertIngRetDes}}</td>
-            <td>{{row.CertIngRetCta}}</td>
-            <td>{{row.CertIngRetSal}}</td>
-            <td>{{row.CertIngRetBasGra}} </td>
-            <td>{{row.CertIngRetBasNoGra}}</td>
-            <td>{{row.CertIngRetValDev}}</td>
-            <td>{{row.CertIngRetValRet}}</td>
-            <td>{{row.CertIngRetIntPag}}</td>
-            <td>{{row.CertIngRetSec}}</td>
+        <tr >
+            <td class="px-2 bg-slate-100" [ngClass]="{'rounded-bl-xl':$last}">{{row.CertIngRetDes}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetDes}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetCta}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetSal|currency:'COP':'symbol':'1.0-0':'es-CO'}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetBasGra |currency:'COP':'symbol':'1.0-0':'es-CO'}} </td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetBasNoGra |currency:'COP':'symbol':'1.0-0':'es-CO'}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetValDev |currency:'COP':'symbol':'1.0-0':'es-CO'}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetValRet |currency:'COP':'symbol':'1.0-0':'es-CO'}}</td>
+            <td class="px-2 bg-slate-100">{{row.CertIngRetIntPag |currency:'COP':'symbol':'1.0-0':'es-CO'}}</td>
+            <td class="px-2 bg-slate-100" [ngClass]="{'rounded-br-xl':$last}">{{row.CertIngRetSec}}</td>
         </tr>  
     }
-<!-- 
-        <tr>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-            <td>hola esto es una comuna</td>
-        </tr>   -->
 </table>
 
