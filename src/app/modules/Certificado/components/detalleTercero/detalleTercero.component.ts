@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
-import { CertificadoService } from '../../../services/Certificado.service';
-import { terecero } from '../../../types';
+import { CertificadoService } from '../../../../services/Certificado.service';
+
 
 @Component({
   selector: 'detalle-tercero',

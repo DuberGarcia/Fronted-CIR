@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { DetalleTerceroComponent } from '../detalleTercero/detalleTercero.component';
-import { CertificadoService } from '../../../services/Certificado.service';
 import { FormsModule } from '@angular/forms';
-import { terecero } from '../../../types';
+import { CertificadoService } from '../../../../services/Certificado.service';
+import { terecero } from '../../../../types';
+
 
 @Component({
   selector: 'buscador-tercero',
