@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { consultarProc, resPro, terecero } from '../types';
 import { catchError, map, Observable, of} from 'rxjs';
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/enviroments';
+
 
 @Injectable({
   providedIn: 'root'

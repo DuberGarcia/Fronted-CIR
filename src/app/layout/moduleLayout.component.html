@@ -1,1 +1,12 @@
-<p>moduleLayout works!</p>,
+<div class="h-screen flex flex-col">
+    <navbar></navbar>
+    <div class="flex flex-1 overflow-y-auto">
+        <div class="w-1/10 bg-lime-500 overflow-y-auto">
+            <sidebar></sidebar>
+        </div>
+        <div class="w-9/10 overflow-y-auto h-full">
+            <router-outlet/>
+        </div>
+    </div>
+</div>
+

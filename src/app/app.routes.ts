@@ -7,8 +7,14 @@ export const routes: Routes = [
         loadComponent:() => import('../app/home/home.component').then( m => m.default)
     },
     {
-        path:"Certificado",
-        loadComponent:()=>import('../app/modules/Certificado/certificado.component').then(m =>m.CertificadoComponent)
+        path:"Modulos",
+        loadComponent:()=>import('../app/layout/moduleLayout.component').then(m =>m.ModuleLayoutComponent),
+        children:[
+            {
+                path:"Certificado",
+                loadComponent:()=>import('../app/modules/Certificado/certificado.component').then(m => m.CertificadoComponent)
+            }
+        ]
     },
     {
         path:"**",
